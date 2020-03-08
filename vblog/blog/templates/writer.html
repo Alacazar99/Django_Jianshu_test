@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+{% endblock %}
+{% block  title %} 编写博客 {% endblock %}
+{% block content %}
+
+    <div class="container-fluid">
+			<div class="row writer-container">
+				<div class="col-md-2 category">
+					<div class="backhome-box">
+						<a href="{% url 'blog:home' %}" class="btn btn-backhome btn-primary btn-block">回到首页</a>
+					</div>
+					<ul class="list-group category-list">
+					  <li class="list-group-item new-article" id="add-ablum-btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 新建文集</li>
+					  <li class="list-group-item add-category-form" id="add-category-form">
+					  	<form id="create_wenji_form">
+
+					  		<input type="text" class="input-main" name="" placeholder="请输入文集名">
+
+					  		<button id="weiji_submit_btn" class='btn-main btn-red'>提交</button> <button type="button" class="btn-cancel">取消</button>
+					  	</form>
+					  </li>
+                    </ul>
+                    <ul class="list-group category-list" id="wenji_list">
+                      {% for category in category_list %}
+                          <li class="list-group-item {% if forloop.counter == 1 %} active_blog {% endif %}" data_id="{{ category.id }}" ><label class="wenji_name">{{ category.category_name }}</label>
+                            <!-- Single button -->
+                            <div class="btn-group pull-right">
+                              <a class="dropdown-toggle ablum-opt-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#" class="update-ablum-btn" data_id="{{ category.id }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改文集</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#" class="delete-ablum-btn" data_id="{{ category.id }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除文集</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                      {% endfor %}
+					</ul>
+				</div>
+
+
+  				<div class="col-md-3 article-list-box">
+  					<a class="btn btn-block new-article-btn">
+  						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 新建文章
+  					</a>
+  					<ul class="list-group article-list">
+					  <li class="list-group-item">
+					  	  <div class="row">
+					  	  	<div class="col-md-11">
+					  	  		<div class="media">
+							      <div class="media-left">
+							        <a href="#">
+							          <img class="media-object" alt="64x64" src="{% static '2.jpeg' %}" data-holder-rendered="true" style="width: 64px; height: 64px;">
+							        </a>
+							      </div>
+							      <div class="media-body">
+							        <h4 class="media-heading">Media heading</h4>
+							        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+							      </div>
+							  </div>
+					  	  	</div>
+					  	  	<div class="col-md-1 article-setting">
+					  	  		<div class="btn-group">
+								  <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+								  </a>
+								  <ul class="dropdown-menu article-setting-dropdown">
+								    <li><a href="#" class="delete-article-btn"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除文章</a>
+								    </li>
+								  </ul>
+								</div>
+					  	  	</div>
+					  	  </div>
+					  </li>
+					  <li class="list-group-item">
+					  	  <div class="row">
+					  	  	<div class="col-md-11">
+					  	  		<div class="media">
+							      <div class="media-left">
+							        <a href="#">
+							          <img class="media-object" alt="64x64" src="{% static '3.jpeg' %}" data-holder-rendered="true" style="width: 64px; height: 64px;">
+							        </a>
+							      </div>
+							      <div class="media-body">
+							        <h4 class="media-heading">Media heading</h4>
+							        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+							      </div>
+							  </div>
+					  	  	</div>
+					  	  	<div class="col-md-1 article-setting">
+					  	  		<div class="btn-group">
+								  <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+								  </a>
+								  <ul class="dropdown-menu article-setting-dropdown">
+								    <li><a href="#" class="delete-article-btn"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除文章</a>
+								    </li>
+								  </ul>
+								</div>
+					  	  	</div>
+					  	  </div>
+					  </li>
+
+
+					  <li class="list-group-item">
+					  	  <div class="row">
+					  	  	<div class="col-md-11">
+					  	  		<div class="media">
+							      <div class="media-left">
+							        <a href="#">
+							          <img class="media-object" alt="64x64" src="{% static '4.jpeg' %}" data-holder-rendered="true" style="width: 64px; height: 64px;">
+							        </a>
+							      </div>
+							      <div class="media-body">
+							        <h4 class="media-heading">Media heading</h4>
+							        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+							      </div>
+							  </div>
+					  	  	</div>
+					  	  	<div class="col-md-1 article-setting">
+					  	  		<div class="btn-group">
+								  <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+								  </a>
+								  <ul class="dropdown-menu article-setting-dropdown">
+								    <li><a href="#" class="delete-article-btn"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除文章</a>
+								    </li>
+								  </ul>
+								</div>
+					  	  	</div>
+					  	  </div>
+					  </li>
+					</ul>
+  				</div>
+  				<div class="col-md-7">
+  					<form id="article-edit-box" class="article-edit-box">
+                        <input type="hidden" id="article_id" value="">
+					  <div class="form-group">
+					    <input type="text" class="form-control title" name="blog_title" id="blog_title" placeholder="请输入标题">
+					  </div>
+					  <div class="form-group">
+					    <textarea class="article-content-area form-control" name="blog_content" id="blog_content"></textarea>
+					  </div>
+					</form>
+  				</div>
+			</div>
+		</div>
+
+		<!--修改模态框-->
+		<div class="modal fade" id="update-ablum-modal" tabindex="-1" role="dialog">
+		  <div class="modal-dialog  modal-sm" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">请输入新文集名</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+					<div class="form-group">
+					    <input type="text" class="form-control" placeholder="新文集名称">
+					</div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn-cancel" data-dismiss="modal">取消</button>
+		        <button type="button" class="btn-main btn-red">确认</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+        <input type="hidden" id="delete_wenji_id">
+		<!--删除模态框-->
+		<div class="modal fade" id="delete-ablum-modal" tabindex="-1" role="dialog">
+		  <div class="modal-dialog  modal-sm" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body">
+                  <p>确认删除文集<strong class="wenji_name">《python 基础》</strong>，文章将被移动到回收站。</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn-cancel" data-dismiss="modal">取消</button>
+		        <button type="button" class="btn-main btn-red" id="confirm_delete_btn">确认</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+{% endblock %}
+
+{#============分割线============#}
+{% block js %}
+        {% load  static %}
+		<script type="text/javascript" src="{% static './ckeditor/ckeditor.js' %}"></script>
+		<script type="text/javascript" src="{% static './ckeditor/lang/zh-cn.js' %}"></script>
+		<script type="text/javascript">
+			CKEDITOR.replace('blog_content');
+		</script>
+        <script type="text/javascript" src="{% static './js/article.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} 微博客-用户注册 {% endblock %}
+{% block content %}
+    {% load widget_tweaks %}
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                用户注册
+              </div>
+              <div class="panel-body">
+{#                    <form action="{% url 'user:register' %}" method="POST">#}
+{#                        {% csrf_token %}#}
+{#                        {{ form.as_ul}}#}
+{#                        <button type="submit" class="btn btn-primary pull-right">登录</button>#}
+{#                    </form>#}
+                  <form id="register_form" action="{% url 'user:register' %}" method="POST">
+                      {% csrf_token %}
+                      {% for field in form %}
+                          <div class="form-group">
+                              {{ field.label_tag }}
+                              {% render_field field class="form-control" %}
+                              {% if field.html_name == 'valid_code' %}
+                                   <a href="#" id="send_code_to_email">给邮箱发送验证码</a>
+                              {% endif %}
+                              {{ field.errors }}
+                          </div>
+                      {% endfor %}
+                      <button type="submit" class="btn btn-primary pull-right">提交信息</button>
+                  </form>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

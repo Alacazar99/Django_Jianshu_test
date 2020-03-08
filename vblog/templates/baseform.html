@@ -1,0 +1,9 @@
+{% load widget_tweaks %}
+{% csrf_token %}
+{% for field in form %}
+  <div class="form-group">
+    {{ field.label_tag }}
+    {% render_field field class="form-control" %}
+    {{ field.errors }}
+  </div>
+{% endfor %}

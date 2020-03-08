@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>write</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/comment.css">
+</head>
+<body>
+	<div class="container-fluid ">
+		<div class="row writer-container">
+				<div class="col-md-2 catogoty">
+						
+						<div class="backhome-box">
+
+						<a href="./index.html" class="btn btn-backhome btn-primary btn-block" target="_blick"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 回到首页</a>
+					    </div>
+						<ul class="list-group catogoty-list">
+						  <li class="list-group-item new_a" id="add-ablum"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						   新建文集
+						  
+						  </li>
+
+						  <!-- <li class="list-group-item add-from"> -->
+						  	<form action="" class="add-category-from" id="add-category-from">
+						  		<input type="text" name="" class="btn-main" placeholder="请输入文集名">
+								<button class="btn-main btn-red" id="btn-main">提交</button>
+								<button class="btn-cancel" id="btn-cancel">取消</button>
+						  	</form>
+
+
+						  <li class="list-group-item">  
+						  日记本
+						  <div class="btn-group pull-right">
+							  <a type="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="al-button">
+							    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li><a href="#" class="update-ablum-btn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改文集</a></li>
+							    <li role="separator" class="divider"></li>
+							    <li><a href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  删除文集</a></li>
+							</ul>
+						</div>
+						  </li>
+
+						  <li class="list-group-item">  
+						  随笔
+						  <div class="btn-group pull-right">
+							  <a type="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="al-button">
+							  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改文集</a></li>
+							    <li role="separator" class="divider"></li>
+							    <li><a href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  删除文集</a></li>
+							</ul>
+						  </li>
+						  <li class="list-group-item">【python】笔记</li>
+						  <li class="list-group-item">【Java】笔记</li>
+						</ul>
+					</div>
+
+
+			<div class="col-md-3 catogoty-3">
+
+				<a href="#" type="button" class="cc-top btn btn-default btn-block">
+					<span class="cc-3-con glyphicon glyphicon-plus-sign pull-left" aria-hidden="true"></span>
+					新建文章
+					<span class="glyphicon glyphicon-th-list pull-right" aria-hidden="true"></span>
+				</a>
+				<ul class="list-group cc-act-menu">
+
+				  <li class="list-group-item cc-act-menu-item">
+					  <div class="media-body">
+				        <h4 class="naric media-heading ">Media</h4>
+				       <span class="hlzjv"> Cras sit amet nibh...</span>
+				      </div>
+
+					<div class="btn-group pull-right">
+							 <a type="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+							   <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							  </a>
+							  <ul class="dropdown-menu ">
+
+							    <li><a href="#"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 文章发布</a></li>
+							    <li role="separator" class="divider"></li>
+							    <li><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 编辑文章</a></li>
+								<li role="separator" class="divider"></li>
+							    <li><a href="#"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> 链接分享</a></li>
+							    <li role="separator" class="divider"></li>
+							    <li><a href="#"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 历史版本</a></li>
+							    <li role="separator" class="divider"></li>
+							    <li><a href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除文章</a></li>
+							    <li role="separator" class="divider"></li>
+							    <li><a href="#"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span> 更多操作</a></li>
+							</ul>
+						</div>
+				  </li>
+				  <li class="list-group-item cc-act-menu-item">【Media】</li>
+				  <li class="list-group-item cc-act-menu-item">【Media】</li>
+				  <li class="list-group-item cc-act-menu-item">【Media】</li>
+				  <li class="list-group-item cc-act-menu-item">【Media】</li>
+				   <li class="list-group-item cc-act-menu-item">【name】</li>
+				  <li class="list-group-item cc-act-menu-item">【name】</li>
+				  <li class="list-group-item cc-act-menu-item">【name】</li>
+				</ul>
+			</div>
+
+			<div class="col-md-7 catogoty-7">
+				<form>
+				  <div class="form-group form-title-top">
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入标题">
+				  </div>
+
+				  <div class="form-group">
+				  <textarea id="blog_centent" class="form-group"></textarea>
+				  </div>
+
+				</form>
+			</div>
+		</div>
+
+	</div>
+	
+	 <!-- 模态框 -->
+	<div class="modal fade" id="update-ablum-modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">请输入新文集名称...</h4>
+	      </div>
+	      <div class="modal-body">
+	   
+	        <form>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="请输入新文集名...">
+				  </div>
+			</form>
+				<div class="modal-footer">
+					<button type="button" class="btn-main btn-red">确认</button>
+			        <button type="button" class="btn-button-no" data-dismiss="modal">取消</button>
+			     </div>
+				
+	    
+	      </div>
+	      
+
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+
+	<script type="text/javascript" src="./js/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src='./ckeditor/ckeditor.js'></script>
+	<script type="text/javascript" src='./ckeditor/lang/zh-cn.js'></script>
+	<script type="text/javascript">
+			CKEDITOR.replace('blog_centent');
+			CKEDITOR.replace( 'editor1',
+{
+toolbar :
+[
+//加粗     斜体，     下划线      穿过线      下标字        上标字
+['Bold','Italic','Underline','Strike','Subscript','Superscript'],
+//数字列表          实体列表            减小缩进    增大缩进
+['NumberedList','BulletedList','-','Outdent','Indent'],
+//左对齐             居中对齐          右对齐          两端对齐
+['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+//超链接 取消超链接 锚点
+['Link','Unlink','Anchor'],
+//图片    flash    表格       水平线            表情       特殊字符        分页符
+['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+'/',
+//样式       格式      字体    字体大小
+['Styles','Format','Font','FontSize'],
+//文本颜色     背景颜色
+['TextColor','BGColor'],
+//全屏           显示区块
+['Maximize', 'ShowBlocks','-']
+]
+}
+);
+	</script>
+	<script type="text/javascript" src='./js/comment.js'></script>
+</body>
+</html>

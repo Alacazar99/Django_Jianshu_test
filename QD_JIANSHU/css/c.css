@@ -1,0 +1,10 @@
+.container-fluid:hover{
+	background: : #f48;
+	cursor: pointer;
+}
+.glyphicon{
+	color: #f47;
+}
+.media{
+	border-bottom: 1px solid #eee;
+}

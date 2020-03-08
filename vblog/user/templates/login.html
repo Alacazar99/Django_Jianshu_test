@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} 微博客-用户登录 {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                用户登录
+              </div>
+              <div class="panel-body">
+                    {% if error_msg %}
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <strong>Warning!</strong> {{ error_msg }}
+                        </div>
+                    {% endif %}
+                    <form action="{% url 'user:login' %}" method="post">
+                      {% include './baseform.html' %}
+                      <button type="submit" class="btn btn-primary pull-right">登录</button>
+                    </form>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
